@@ -28,6 +28,9 @@ doesn't seem to be used much. And git commits show it was built like that from t
 
 ## No Hibernate
 
+⚠️ Disclaimer ⚠️
+> I got to know this Spring Data JDBC when I worked in the company which wasn't using Spring Framework at all. Seems it's a powerful tool, especially when combining with DDD approach, but I haven't seen this used on the production env.
+
 Do you know we don't need Hibernate to use `@Table` annotation?
 
 [![Spring Data JDBC comment](./jdbc.png)](https://betterprogramming.pub/which-java-microservice-framework-should-you-choose-in-2020-4e306a478e58)
@@ -40,10 +43,16 @@ Do you know we don't need Hibernate to use `@Table` annotation?
 
 ## Rest Repo
 
+⚠️ Disclaimer ⚠️
+> I'd personally use Rest Repositories just for read operations. Preferably built on top of the pure `Repository` interface. It can be a powerful thing for "query" part of the system, especially combined with projections. However, in practice it seems sooner or later you'd move towards a traditional approach which is more customizable than `@RepositoryRestResource` and `@RestResource` options, default interface methods and even `RepositoryRestController`.
+
 [Spring Data REST](https://spring.io/projects/spring-data-rest) specifically. With
 its [detailed documentation](https://docs.spring.io/spring-data/rest/docs/current/reference/html/#reference).
 
 ## Projections
+
+⚠️ Disclaimer ⚠️
+> I really like projections. In my eyes it's an easy opt-in solution which can be replaced with a hidden implementing class and `ObjectMapper` configs if needed.
 
 Not only
 for [above repositories](https://docs.spring.io/spring-data/rest/docs/current/reference/html/#projections-excerpts), but
