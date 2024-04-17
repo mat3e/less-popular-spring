@@ -29,7 +29,7 @@ doesn't seem to be used much. And git commits show it was built like that from t
 ## No Hibernate
 
 ⚠️ Disclaimer ⚠️
-> I got to know this Spring Data JDBC when I worked in the company which wasn't using Spring Framework at all. Seems it's a powerful tool, especially when combining with DDD approach, but I haven't seen this used on the production env.
+> After working a year with Spring Data JDBC within the actual project, I liked it, but it's meant for the "command" part of the system and it's not a perfect choice for "query" (heavy reading). E.g. no way to prevent N+1 selects problem. I go with Spring Data JDBC in command and with `JdbcTemplate` in query parts of systems.
 
 Do you know we don't need Hibernate to use `@Table` annotation?
 
